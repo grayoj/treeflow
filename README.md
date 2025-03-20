@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# Treeflow - A DOM Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Treeflow is a tool that visualizes the structure of a webpage’s DOM (Document Object Model) in real time. It converts the hierarchical relationships between elements into an interactive tree, allowing users to inspect, modify, and explore the webpage’s structure dynamically.
 
-Currently, two official plugins are available:
+![Treeflow Preview](https://yzub7xjzmf.ufs.sh/f/p5WCAJ95HVcjnxMO6AOupTo3uQUHaivRf6V9ePmEy0kIchZd)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Treeflow captures the current state of the DOM and represents it as a graph. Each HTML element becomes a node, and parent-child relationships are shown as connecting edges. The visualization updates when elements are added, removed, or modified.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Accuracy Considerations
+
+- The structure displayed is based on the DOM at the time of capture.
+- Some dynamically generated elements may not appear immediately if they are loaded asynchronously.
+- Treeflow does not display non-DOM elements like JavaScript variables or event listeners.
+
+## Features
+
+- **Real-Time DOM Inspection** - See the structure of the webpage’s DOM as it currently exists.
+- **Command Execution** - Run JavaScript commands to modify the DOM and see the changes reflected in the visualization.
+- **Interactive Graph** - Click on nodes to highlight elements and understand their relationships.
+- **JSON Representation** - View the DOM as structured JSON data.
+- **Light and Dark Mode** - Adjust the interface for better readability.
+
+## Installation
+
+### 1. Clone the Repository
+```sh
+git clone https://github.com/grayoj/treeflow.git
+cd treeflow
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Using Bun (preferred):
+```sh
+bun install
 ```
+or using npm:
+```sh
+npm install
+```
+
+### 3. Run the Application
+
+Using Bun:
+```sh
+bun run dev
+```
+or using npm:
+```sh
+npm run dev
+```
+
+## Usage
+
+- Run JavaScript commands in the input box to inspect or modify the DOM.
+- Click on elements in the visualizer to see their relationships.
+- Use the JSON view to get a structured representation of the DOM tree.
+- Refresh the page to reset the visualization if needed.
+
+## License
+
+This project is open-source under the MIT License.
+
