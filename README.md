@@ -2,12 +2,14 @@
 
 Treeflow is a tool that visualizes the structure of a webpage’s DOM (Document Object Model) in real time. It converts the hierarchical relationships between elements into an interactive tree, allowing users to inspect, modify, and explore the webpage’s structure dynamically.
 
-![Treeflow Preview](https://yzub7xjzmf.ufs.sh/f/p5WCAJ95HVcjnxMO6AOupTo3uQUHaivRf6V9ePmEy0kIchZd)
+![Treeflow Preview](https://yzub7xjzmf.ufs.sh/f/p5WCAJ95HVcju07ksZbmkZY7oWbqljgCEt0BL6f2hMGT9H3x)
 
 
 ## How It Works
 
 Treeflow captures the current state of the DOM and represents it as a graph. Each HTML element becomes a node, and parent-child relationships are shown as connecting edges. The visualization updates when elements are added, removed, or modified.
+
+![Treeflow in Action](https://yzub7xjzmf.ufs.sh/f/p5WCAJ95HVcjnjmoEiupTo3uQUHaivRf6V9ePmEy0kIchZdF)
 
 ### Accuracy Considerations
 
