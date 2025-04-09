@@ -1,4 +1,4 @@
-# Treeflow - A DOM Visualizer
+# Treeflow 
 
 Treeflow is a tool that visualizes the structure of a webpage’s DOM (Document Object Model) in real time. It converts the hierarchical relationships between elements into an interactive tree, allowing users to inspect, modify, and explore the webpage’s structure dynamically.
 
